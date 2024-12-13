@@ -1,0 +1,33 @@
+runtime: python310  # The runtime for your Flask app (can be adjusted based on Python version)
+
+entrypoint: gunicorn -b :$PORT main:app  # Command to start the Flask app using Gunicorn
+
+env_variables:
+  # Example of setting environment variables for your app
+  FLASK_ENV: 'production'  # Or 'development' for local environments
+  DATABASE_URL: 'your-database-url'  # Example of adding a database URL
+
+instance_class: F1  # Specify the instance class for the app (adjust as needed)
+
+# Automatic scaling configuration
+automatic_scaling:
+  target_cpu_utilization: 0.65  # Target CPU utilization for scaling
+  min_instances: 1  # Minimum number of instances to keep running
+  max_instances: 10  # Maximum number of instances to scale to
+  cool_down_period_sec: 180  # Time before scaling down
+  max_idle_instances: 5  # Limit idle instances
+
+# Handlers for routing requests (static files and dynamic Flask routes)
+handlers:
+  - url: /static
+    static_dir: static/  # Directory where static files are stored
+
+  - url: /.*  # All other routes handled by Flask
+    script: auto  # Automatically handled by the Flask app
+
+# Optional: enable Google Cloud Storage for static files
+# You can add a bucket for static file storage
+# If using Cloud Storage, you can uncomment the following:
+#   - url: /static
+#     static_files: gs://your-bucket-name/static/(.*)
+#     upload: gs://your-bucket-name/static/(.*)
