@@ -1,0 +1,64 @@
+# Exclude version control directories
+.git/
+.gitignore
+
+# Exclude IDE and editor directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Exclude Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*$py.class
+
+# Exclude virtual environment directories
+venv/
+env/
+*.venv/
+
+# Exclude Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Exclude log files
+*.log
+
+# Exclude data files
+*.csv
+*.tsv
+*.json
+*.xml
+*.dat
+*.xlsx
+
+# Exclude build directories
+build/
+dist/
+*.egg-info/
+
+# Exclude Docker-related files
+docker-compose.override.yml
+*.env
+
+# Exclude temporary or unnecessary files
+.DS_Store
+Thumbs.db
+
+# Exclude coverage reports
+.coverage
+coverage.xml
+*.coveragerc
+nosetests.xml
+*.hypothesis/
+
+# Exclude files created by PyInstaller
+*.spec
+
+# Exclude Cloud Function's node_modules or any other dependencies
+node_modules/
+
+# Exclude Cloud Build directories (if using Cloud Build)
+cloudbuild/
