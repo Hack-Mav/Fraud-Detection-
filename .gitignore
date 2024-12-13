@@ -1,0 +1,66 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+virenv/
+env/
+*.venv/
+
+# IDE and editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data files and outputs
+*.csv
+*.tsv
+*.xlsx
+*.json
+*.xml
+*.dat
+
+# Log files
+*.log
+
+# Python coverage reports
+.coverage
+*.coveragerc
+coverage.xml
+nosetests.xml
+*.hypothesis/
+
+# Build directories
+build/
+dist/
+*.egg-info/
+
+# Docker files
+docker-compose.override.yml
+*.env
+
+# Test directories
+tests/__pycache__/
+
+# macOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+
+# Python specific egg files
+*.egg
+*.egg-info/
+
+# Distribution / packaging
+*.tar.gz
+*.whl
+*.zip
+
+# PyInstaller
+*.spec
